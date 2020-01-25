@@ -27,7 +27,9 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: 
+Generally faster because you are not sending a request to the server. 
+The whole page won't refresh just the components that are being rendered.
 
 ## Project Set Up
 
