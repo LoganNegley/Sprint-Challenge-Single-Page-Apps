@@ -26,15 +26,17 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-    <Link>
+
       <h2>
           {info.map(character => (
           <div key={character.id} className="character">
-            {character.name}
+            <Link to='/character'>    
+              {character.name}    
+            </Link> 
           </div>
         ))}
       </h2>
-     </Link> 
+ 
     </section>
   );
 }
