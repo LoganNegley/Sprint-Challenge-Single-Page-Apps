@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import {Link} from 'react-router-dom';
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
+  const [info, setInfo] = useState([]);
 
 
 
@@ -11,7 +14,9 @@ export default function CharacterList() {
     useEffect(() => {
     axios.get('https://rickandmortyapi.com/api/character/')
     .then(response => {
+      setInfo(response.data.results);
       console.log(response);
+      console.log(info);
     })
 
     },[]);
