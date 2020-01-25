@@ -11,9 +11,11 @@ export default function App() {
   return (
     <main>
       <Header />
+      {/* Routes */}
       <Route path='/' component = {WelcomePage}/>
-      <CharacterList/>
       <Route path= '/character/:id' component={CharacterCard}/>
+      {/* Components */}
+      <CharacterList/>
     </main>
   );
 }
