@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
-  const [info, setInfo] = useState([]);
+  const [info, setInfo] = useState({});
 
 
 
@@ -15,12 +15,13 @@ export default function CharacterList() {
     axios.get('https://rickandmortyapi.com/api/character/')
     .then(response => {
       setInfo(response.data.results);
-      console.log(response);
-      console.log(info);
+      // console.log(response);
     })
-
+    .catch(error => {
+      console.error('Server Error', error);
+    });
     },[]);
-
+     console.log(info);
 
 
   return (
