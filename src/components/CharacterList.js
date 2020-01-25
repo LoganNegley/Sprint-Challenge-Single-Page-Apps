@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom';
+import CharacterCard from '../components/CharacterCard';
 
-export default function CharacterList() {
+function CharacterList() {
   const [info, setInfo] = useState([]);
 
     useEffect(() => {
@@ -20,17 +21,23 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-
-      <h2>
           {info.map(character => (
           <div key={character.id} className="character">
             <Link to='/character/id'>    
-              {character.name}    
+              <CharacterCard/>    
             </Link> 
           </div>
         ))}
-      </h2>
  
     </section>
   );
 }
+
+function CharcterDetails({character}){
+  console.log(character)
+  const {name, status,species,gender} = character;
+  return(
+    <CharacterCard name={name} status={status} species={species} gender={gender}/>
+  );
+}
+export default CharacterList;
