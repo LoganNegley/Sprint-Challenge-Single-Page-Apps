@@ -3,7 +3,7 @@ import axios from "axios";
 import {Link} from 'react-router-dom';
 import CharacterCard from '../components/CharacterCard';
 
-function CharacterList() {
+export default function CharacterList() {
   const [info, setInfo] = useState([]);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ function CharacterList() {
       console.error('Server Error', error);
     });
     },[]);
-      console.log(info);
+      console.log(info)
 
 
   return (
@@ -24,7 +24,7 @@ function CharacterList() {
           {info.map(character => (
           <div key={character.id} className="character">
             <Link to='/character/id'>    
-              <CharacterCard/>    
+              {character.name}    
             </Link> 
           </div>
         ))}
@@ -32,12 +32,3 @@ function CharacterList() {
     </section>
   );
 }
-
-function CharcterDetails({character}){
-  console.log(character)
-  const {name, status,species,gender} = character;
-  return(
-    <CharacterCard name={name} status={status} species={species} gender={gender}/>
-  );
-}
-export default CharacterList;
