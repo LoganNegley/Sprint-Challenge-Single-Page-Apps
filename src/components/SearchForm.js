@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function SearchForm(props) {
-console.log('Props for Search Form', props.info)
+console.log('Props for Search Form', ...props.info)
 
 const characterList = props.info
 console.log(characterList)
@@ -14,6 +14,15 @@ const handleChanges = event => {
   setSearchTerm(event.target.value)
 };
 console.log(searchTerm);
+
+
+// useEffect Search Functionality
+useEffect(() => {
+const results = characterList.filter(char => 
+char.includes(searchTerm)
+);
+setSearchResults(results);
+},[searchTerm]);
 
 // Form
   return (
