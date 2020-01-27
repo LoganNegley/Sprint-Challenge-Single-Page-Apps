@@ -12,8 +12,7 @@ export default function App() {
     <main>
       <Header />
       <Route path='/' component = {WelcomePage}/>
-      <Route path= '/character/:id' component={CharacterCard}/>
-      <CharacterList/>
+      <Route path= '/characters' component={CharacterList}/>
    </main>
   );
 }
