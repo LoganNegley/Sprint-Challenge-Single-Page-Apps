@@ -27,7 +27,7 @@ export default function CharacterCard(props) {
   return(
     <div className='character-wrapper'>
       <CardDiv>
-        <CardImg width='100px' src={`${props.character.image}`} alt={`Picture of ${props.character.name}`} />
+        <CardImg src={`${props.character.image}`} alt={`Picture of ${props.character.name}`} />
         <CardBody>
           <CardTitle><Header>{props.character.name}</Header></CardTitle>
           <CardSubtitle><SubTitle>Info about {props.character.name}</SubTitle></CardSubtitle>

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import CharacterCard from '../components/CharacterCard';
+
 
 export default function SearchForm(props) {
 console.log('Props for Search Form', props.info)
@@ -19,7 +21,7 @@ console.log(searchTerm);
 // useEffect Search Functionality
 
  useEffect(() => {
-    const results = characterList.filter(char => char.name.includes(searchTerm));
+    const results = characterList.filter(char => char.name.toLowerCase().includes(searchTerm.toLowerCase()));
     setSearchResults(results);
   }, [searchTerm]);
 
@@ -40,7 +42,7 @@ console.log(searchTerm);
       </form>
          {searchResults.map(char => (
         <div key={char.id} >
-          {char}
+          {char.name}
         </div>
       ))}
     </section>
