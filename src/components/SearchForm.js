@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 
 export default function SearchForm(props) {
- 
+console.log('Props for Search Form', props.info)
+
+//  States
 const [searchTerm, setSearchTerm] = useState('');
 
+
+// Functions
 const handleChanges = event => {
-  console.log("Changes",  event.target.value);
-}
+  setSearchTerm(event.target.value)
+};
+console.log(searchTerm);
+
+// Form
   return (
     <section className="search-form">
       <form>
@@ -15,7 +22,8 @@ const handleChanges = event => {
         id='search' 
         type='text'
         placeholder='Search For Character'
-            onChange={handleChanges}>
+        value={searchTerm}
+        onChange={handleChanges}>
     
         </input>
       </form>
