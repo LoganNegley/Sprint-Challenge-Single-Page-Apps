@@ -9,38 +9,20 @@ export default function CharacterCard(props) {
 
   return(
 
-    <div>
+    <div className='character-wrapper'>
       <Card>
         <CardImg src={`${props.character.image}`} alt={`Picture of ${props.character.name}`} />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
+          <CardTitle><h2>{props.character.name}</h2></CardTitle>
+          <CardSubtitle>Info about {props.character.name}</CardSubtitle>
+          <CardText>
+            <p>Status: {props.character.status}</p>
+            <p>Species: {props.character.species}</p>
+            <p>Gender: {props.character.gender}</p>
+          </CardText>
         </CardBody>
       </Card>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // <div className='character-card'>
-    //   <h2>{props.character.name}</h2>
-    //   <p>Status: {props.character.status}</p>
-    //   <p>Species: {props.character.species}</p>
-    //   <p>Gender: {props.character.gender}</p>
-    // </div>
   );
 }
 
