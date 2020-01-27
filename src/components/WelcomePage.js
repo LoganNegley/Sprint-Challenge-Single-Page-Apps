@@ -1,5 +1,15 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+
+
+
+const Button = styled.button`
+background-color:red;
+`;
+
+
+
 
 
 export default function WelcomePage() {
@@ -14,7 +24,7 @@ export default function WelcomePage() {
         />
       </header>
         <Link to='/characters'>
-          <button color='danger'>Checkout the Characters</button>
+          <Button color='danger'>Checkout the Characters</Button>
         </Link>
     </section>
   );
