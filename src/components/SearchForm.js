@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function SearchForm(props) {
-console.log('Props for Search Form', ...props.info)
+console.log('Props for Search Form', props.info)
 
 const characterList = props.info
 console.log(characterList)
@@ -17,12 +17,12 @@ console.log(searchTerm);
 
 
 // useEffect Search Functionality
-useEffect(() => {
-const results = characterList.filter(char => 
-char.includes(searchTerm)
-);
-setSearchResults(results);
-},[searchTerm]);
+
+ useEffect(() => {
+    const results = characterList.filter(char => char.name.includes(searchTerm));
+    setSearchResults(results);
+  }, [searchTerm]);
+
 
 // Form
   return (
@@ -38,6 +38,11 @@ setSearchResults(results);
     
         </input>
       </form>
+         {searchResults.map(char => (
+        <div key={char.id} >
+          {char}
+        </div>
+      ))}
     </section>
   );
 }
