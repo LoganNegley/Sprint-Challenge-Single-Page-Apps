@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 
+
 export default function WelcomePage() {
   return (
     <section className="welcome-page">
@@ -13,7 +14,7 @@ export default function WelcomePage() {
         />
       </header>
         <Link to='/characters'>
-          <button>Checkout the Characters</button>
+          <button color='danger'>Checkout the Characters</button>
         </Link>
     </section>
   );
