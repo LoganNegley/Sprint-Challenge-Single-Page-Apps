@@ -9,7 +9,7 @@ export default function SearchForm(props) {
         <input
         id='search' 
         type='text'
-        placeholder='Search For Your Favorite Character Here'>
+        placeholder='Search For Character'>
 
         </input>
       </form>
