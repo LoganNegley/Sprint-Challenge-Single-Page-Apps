@@ -3,9 +3,11 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 
-
 const Button = styled.button`
-background-color:red;
+background-color:#A9D3E9;
+font-size: 25px;
+margin-top:20px;
+color:#D78A79;
 `;
 
 
