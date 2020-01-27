@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import CharacterCard from '../components/CharacterCard';
-
+import {Link} from 'react-router-dom';
 
 export default function SearchForm(props) {
 console.log('Props for Search Form', props.info)
-
 const characterList = props.info
 console.log(characterList)
+
 //  States
 const [searchTerm, setSearchTerm] = useState('');
 const [searchResults, setSearchResults] = useState([]);
@@ -42,7 +42,7 @@ console.log(searchTerm);
       </form>
          {searchResults.map(char => (
         <div key={char.id} >
-          {char.name}
+            {char.name}
         </div>
       ))}
     </section>
