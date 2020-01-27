@@ -22,6 +22,7 @@ export default function CharacterList() {
   return (
     <section className="character-list">
     <h2>The Characters of Rick and Morty</h2>
+    
           {info.map(character => (
           <div key={character.id} className="character">
             <CharacterCard character={character}/>
