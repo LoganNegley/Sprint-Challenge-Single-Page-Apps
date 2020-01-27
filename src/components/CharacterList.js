@@ -3,6 +3,8 @@ import axios from "axios";
 import {Link} from 'react-router-dom';
 import CharacterCard from '../components/CharacterCard';
 import SearchForm from '../components/SearchForm';
+
+
 export default function CharacterList() {
   const [info, setInfo] = useState([]);
 
